@@ -16,11 +16,11 @@ def validar(request):
 	
 			controle = Controle.objects.all().order_by('nome')
 
-			return render(request,'validar.html',{'form':form,'controle':controle})
+			return render(request,'validar.html',{'form': form,'controle':controle})
 		else:
-		    return render(request,'index.html',{'form':form})
+		    return render(request,'index.html',{'form': form})
 
 def cadastroPatrimonio(request):
-    formPat = PatrimonioForm()
-    return render(request, 'cadastroPatrimonio.html', {PatrimonioForm: formPat})
+    form = PatrimonioForm()
+    return render(request, 'cadastroPatrimonio.html', {'form': form})
 # Create your views here.

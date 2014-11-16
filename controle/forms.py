@@ -1,8 +1,7 @@
 from django import forms
 from controle.models import Controle
 
-class PatrimonioForm(forms.Form):
+class PatrimonioForm(forms.ModelForm):
     class Meta:
         model = Controle
         
-    

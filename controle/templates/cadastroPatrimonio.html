@@ -30,16 +30,15 @@
                <th>{% trans "Nome" %}</th>
                <th>{% trans "Descricao" %}</th>
                <th>{% trans "Valor" %}</th>
-               <th>IMC</th>
                <th></th>
              </tr>
            </thead>
            <tbody>
-           {% for cadastro in cadastros %}
+           {% for controle in controle %}
              <tr>
-               <td>{{ avaliacao.nome }}</td>
-               <td>{{ avaliacao.descricao }}</td>
-               <td>{{ avaliacao.valor }}</td>
+               <td>{{ controle.nome }}</td>
+               <td>{{ controle.descricao }}</td>
+               <td>{{ controle.valor }}</td>
                <td><a href="/apagar/{{ avaliacao.pk }}"><strong>X</strong></a>
                </td>
              </tr>
