@@ -1,0 +1,35 @@
+{% load staticfiles %} <!-- PARA USAR O CAMINHO PADRAO STATIC_URL -->
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Controle Patrimonio</title>
+
+    <!-- CSS -->
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--FIM CSS -->  
+
+
+
+  </head>
+
+  <body>
+      <div class="container">
+      <!-- CONTEUDO -->
+        
+        {% block conteudo %}{% endblock conteudo %}
+      <!-- FIM CONTEUDO -->
+      </div>
+
+    <!-- JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+
+    <!-- FIM JavaScript -->
+    
+  </body>
+</html>
