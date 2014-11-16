@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+ {% load i18n %}
+        
+        <h1>{% trans "Cadastro" %}</h1> <a href="/fazerLogoff/"><strong>{% trans "Clique para Sair" %}</strong></a><br/><br/>
+        <br/>
+        <form action="/cadastroPatrimonio/" method="POST">
+          {% csrf_token %}
+          <strong>{% trans "Nome" %}</strong> <br/> {{ form.nome }} <br/>
+          <strong>{% trans "Descricao" %}</strong> <br/> {{ form.descricao }} <br/>
+          <strong>{% trans "Valor" %}</strong> <br/> {{ form.valor }} <br/>
+          <input type="submit" value={% trans "Cadastrar" %} class="btn btn-success" />
+        </form>
+
+        {% if resultado != None %}
+          <div class="alert alert-success alert-dismissible" role="alert" >
+           <button type="button" class="close" data-dismiss="alert">
+             <span class="sr-only"></span>
+           </button>
+           
+          </div>
+        {% endif %}
+        <br/>
+        <div class="table-responsive">
+         <table class="table table-striped">
+           <thead>
+             <tr>
+               <th>{% trans "Nome" %}</th>
+               <th>{% trans "Descricao" %}</th>
+               <th>{% trans "Valor" %}</th>
+               <th>IMC</th>
+               <th></th>
+             </tr>
+           </thead>
+           <tbody>
+           {% for cadastro in cadastros %}
+             <tr>
+               <td>{{ avaliacao.nome }}</td>
+               <td>{{ avaliacao.descricao }}</td>
+               <td>{{ avaliacao.valor }}</td>
+               <td><a href="/apagar/{{ avaliacao.pk }}"><strong>X</strong></a>
+               </td>
+             </tr>
+           {% endfor %}  
+           </tbody>
+         </table>
+        </div>
+
+ {%endblock conteudo %}

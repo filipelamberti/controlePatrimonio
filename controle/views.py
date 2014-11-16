@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from controle.forms import PatrimonioForm
 from controle.models import Controle
+from decimal import Decimal
 
 def index(request):
     form = PatrimonioForm()
@@ -19,4 +20,7 @@ def validar(request):
 		else:
 		    return render(request,'index.html',{'form':form})
 
+def cadastroPatrimonio(request):
+    formPat = PatrimonioForm()
+    return render(request, 'cadastroPatrimonio.html', {PatrimonioForm: formPat})
 # Create your views here.
