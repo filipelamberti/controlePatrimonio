@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+ {% load i18n %}
+<div class="col-sm-12" align="center">
+    <h1>{% trans "Controle Patrimonio" %}</h1><br/><br/>
+    
+  
+    <form name="setLangEnglish" action="/i18n/setlang/" method="POST">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="/" />
+        <input type="hidden" name="language" value="en" />
+    </form>
+
+ 
+    <form name="setLangPortugues" action="/i18n/setlang/" method="POST">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="/" />
+        <input type="hidden" name="language" value="pt-br" />
+    </form>
+
+    <br/>
+    
+    <a href="/cadastroPatrimonio/"><strong>{% trans "Cadastro" %}</strong></a><br/><br/>    
+
+    <br/>
+   <!-- <form action="/login/" method="POST">
+      {% csrf_token %}
+      <strong>{% trans "Usuário" %}</strong> <br/> {{ form.login }} <br/>
+      <strong>{% trans "Senha" %}</strong><br/> {{ form.senha }} <br/>
+      <input type="submit" value={% trans "Entrar" %} class="btn btn-primary" />
+    </form>-->
+  </div>
+
+{%endblock conteudo %}
